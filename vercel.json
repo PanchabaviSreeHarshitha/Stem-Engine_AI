@@ -1,0 +1,19 @@
+{
+    "buildCommand": "cd frontend && npm install --include=dev && npm run build",
+    "outputDirectory": "frontend/dist",
+    "framework": "vite",
+    "rewrites": [
+        {
+            "source": "/api/ai",
+            "destination": "/api/ai.js"
+        },
+        {
+            "source": "/api/(.*)",
+            "destination": "/api/index.py"
+        },
+        {
+            "source": "/(.*)",
+            "destination": "/index.html"
+        }
+    ]
+}

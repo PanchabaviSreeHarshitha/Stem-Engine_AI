@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;700&family=Noto+Sans+Telugu:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-dark: #0f172a;
+  --brand-surface: #1e293b;
+  --brand-accent: #3b82f6;
+  --brand-text: #f8fafc;
+  --brand-muted: #94a3b8;
+}
+
+.light-theme {
+  --brand-dark: #f8fafc;
+  --brand-surface: #ffffff;
+  --brand-accent: #3b82f6;
+  --brand-text: #0f172a;
+  --brand-muted: #64748b;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-dark text-brand-text font-sans antialiased transition-all duration-300;
+  }
+}
+
+/* Language specific font overrides */
+.lang-hi {
+  font-family: 'Noto Sans Devanagari', 'Inter', sans-serif !important;
+}
+
+.lang-te {
+  font-family: 'Noto Sans Telugu', 'Inter', sans-serif !important;
+}
+
+.katex-display {
+  @apply overflow-x-auto overflow-y-hidden pb-4;
+}
+
+/* Custom scrollbar for a sleek look */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-brand-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-brand-surface rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-brand-muted;
+}
